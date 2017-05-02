@@ -1,0 +1,51 @@
+.widget {
+	margin: 0 0 1.5em;
+	background: $color__white;
+	padding: 15px;
+	padding-top: 35px;
+	border-radius: 6px;
+	position:relative;
+	margin-bottom: 40px;
+	-webkit-box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+	.widget-title {
+		font-size: 14px;
+	    margin-top: 10px;
+	    background: $color__secondary;
+		@include gradient-horizontal($color__secondary, darken($color__secondary, 15%), 0%, 100%);
+	    padding: 10px;
+	    color: #fff;
+	    border-radius: 4px;
+	    position: absolute;
+	    top: -18px;
+	    margin: auto;
+	    width: 70%;
+	    left: 15%;
+	    text-align: center;
+	    box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba($color__secondary, 0.4);
+	}
+	&.widget_recent_entries, &.widget_recent_comments, &.widget_archive, &.widget_categories, &.widget_meta {
+		ul {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 0;
+			li {
+				padding: 10px 0;
+				border-bottom: 1px dashed $color__light-black;
+				a {
+					transition: color 0.4s ease;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+}

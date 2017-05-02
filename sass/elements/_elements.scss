@@ -1,0 +1,54 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	font-family: 'Poppins';
+	font-size: 14px;
+	line-height: 1.75em;
+	letter-spacing: 0.5px;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility !important;
+	color: #383838;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Rubik';
+	font-weight: 400;
+	color: #323232;
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+@import "lists";
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+@import "tables";
