@@ -12,10 +12,26 @@
  * @package Shuban
  */
 
-get_header(); ?>
+get_header(); 
 
-	<div class="st-primary-wrapper col-md-8">
-		<div id="primary" class="content-area">
+get_sidebar( 'left' ); ?>
+<!-- left side -->
+
+		<!-- Layout check -->
+		<?php
+		if ( is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) { ?>
+		    <div class="st-primary-wrapper col-md-6">
+		<?php  } 
+		elseif (  is_active_sidebar( 'sidebar' ) && !is_active_sidebar( 'sidebar-left' ) ) {   ?>
+		<div class="st-primary-wrapper col-md-8">
+		<?php
+		} elseif (  !is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) {   ?>
+		<div class="st-primary-wrapper col-md-8">
+		<?php  }  else {  ?>
+		<div class="st-primary-wrapper col-md-12">
+		<?php  }  ?>
+		<!-- Layout check -->
+        <div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
 			<?php
@@ -37,8 +53,8 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'template-parts/content', get_post_format() );
 
+							get_template_part( 'template-parts/content', get_post_format() );
 				endwhile;
 
 				the_posts_navigation();
@@ -52,7 +68,7 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 	</div>
-	<!-- /.st-primary-wrapper col-md-8 -->
+	<!-- /.st-primary-wrapper col-md-8 Or col-md-12 -->
 
 
 <?php

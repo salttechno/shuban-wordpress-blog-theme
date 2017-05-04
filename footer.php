@@ -21,10 +21,40 @@
 	<div class="st-footer-area">
 		<div class="container">
 			<footer id="colophon" class="site-footer" role="contentinfo">
+<?php
+
+if (   is_active_sidebar( 'first-footer'  )
+    && is_active_sidebar( 'second-footer' )
+    && is_active_sidebar( 'third-footer'  )
+  
+) : 
+
+
+  //end of all sidebar checks.
+ endif;?>
+ 
+				<aside class="shuban-footer" role="complementary">
+				    <div class="col-md-4 widget-area">
+				        <?php dynamic_sidebar( 'first-footer' ); ?>
+				    </div><!-- .first .widget-area -->
+				 
+				    <div class="col-md-4 widget-area">
+				        <?php dynamic_sidebar( 'second-footer' ); ?>
+				    </div><!-- .second .widget-area -->
+				 
+				    <div class="col-md-4 widget-area">
+				        <?php dynamic_sidebar( 'third-footer' ); ?>
+				    </div><!-- .third .widget-area -->
+
+				</aside><!-- #shuban-footer -->
+
 				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'shuban' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'shuban' ), 'WordPress' ); ?></a>
-					<span class="sep"> | </span>
-					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'shuban' ), 'shuban', '<a href="http://www.salttechno.com/" rel="designer">SaltTechno</a>' ); ?>
+					<?php
+                        $titan = TitanFramework::getInstance( 'shuban' );
+                        $shuban_sitefooter = $titan->getOption( 'shuban-sitefooter' ); 
+                     
+                     echo $shuban_sitefooter; ?>
+
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 		</div>
