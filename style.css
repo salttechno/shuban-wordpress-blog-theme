@@ -11154,9 +11154,9 @@ a:hover, a:active {
   width: 100%;
   border-radius: 6px;
   margin-bottom: 20px;
-  background: #3498db;
+  background: #1e88e5;
   /* @include gradient-horizontal($color__secondary, darken($color__secondary, 15%), 0%, 100%); */
-  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba(30, 136, 229, 0.4);
 }
 
 .main-navigation ul {
@@ -11195,7 +11195,7 @@ a:hover, a:active {
 }
 
 .main-navigation div > ul > li {
-  border-right: 1px solid #5faee3;
+  border-right: 1px solid #4ca0ea;
 }
 
 .main-navigation div > ul > li:last-child {
@@ -11418,12 +11418,12 @@ a:hover, a:active {
 .widget .widget-title {
   font-size: 14px;
   margin-top: 10px;
-  background: #3498db;
-  background-image: -webkit-linear-gradient(left, #3498db 0%, #1d6fa5 100%);
-  background-image: -o-linear-gradient(left, #3498db 0%, #1d6fa5 100%);
-  background-image: linear-gradient(to right, #3498db 0%, #1d6fa5 100%);
+  background: #1e88e5;
+  background-image: -webkit-linear-gradient(left, #1e88e5 0%, #1360a4 100%);
+  background-image: -o-linear-gradient(left, #1e88e5 0%, #1360a4 100%);
+  background-image: linear-gradient(to right, #1e88e5 0%, #1360a4 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF3498DB', endColorstr='#FF1D6FA5', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF1E88E5', endColorstr='#FF1360A4', GradientType=1);
   padding: 10px;
   color: #fff;
   border-radius: 4px;
@@ -11433,7 +11433,7 @@ a:hover, a:active {
   width: 70%;
   left: 15%;
   text-align: center;
-  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba(52, 152, 219, 0.4);
+  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba(30, 136, 229, 0.4);
 }
 
 .widget.widget_recent_entries ul, .widget.widget_recent_comments ul, .widget.widget_archive ul, .widget.widget_categories ul, .widget.widget_meta ul {
