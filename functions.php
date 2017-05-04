@@ -90,6 +90,11 @@ function shuban_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+
+    //Adding Custom CSS Styles to TinyMCE
+
+    add_editor_style();
 }
 endif;
 add_action( 'after_setup_theme', 'shuban_setup' );
@@ -113,9 +118,59 @@ add_action( 'after_setup_theme', 'shuban_content_width', 0 );
  */
 function shuban_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'shuban' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'shuban' ),
+		'name'          => esc_html__( 'Right Sidebar', 'shuban' ),
+		'id'            => 'sidebar',
+		'description'   => esc_html__( 'Add widgets here to make right sidebar visible.', 'shuban' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'Left Sidebar', 'shuban' ),
+		'id'            => 'sidebar-left',
+		'description'   => esc_html__( 'Add widgets here to make left sidebar visible.', 'shuban' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'First Footer Widget Area', 'shuban' ),
+		'id'            => 'first-footer',
+		'description'   => esc_html__( 'Add widgets here to make First sidebar visible.', 'shuban' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'Second Footer Widget Area', 'shuban' ),
+		'id'            => 'second-footer',
+		'description'   => esc_html__( 'Add widgets here to make Second sidebar visible.', 'shuban' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'Third Footer Widget Area', 'shuban' ),
+		'id'            => 'third-footer',
+		'description'   => esc_html__( 'Add widgets here to make Third sidebar visible.', 'shuban' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+		register_sidebar( array(
+		'name'          => esc_html__( 'Page Sidebar', 'shuban' ),
+		'id'            => 'page-sidebar',
+		'description'   => esc_html__( 'Add widgets here to make Page sidebar visible.', 'shuban' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -143,7 +198,7 @@ add_action( 'wp_enqueue_scripts', 'shuban_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-// require get_template_directory() . '/inc/custom-header.php';
+ require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -164,3 +219,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+require FRAMEWORK . '/init.php';
+
+
+
+

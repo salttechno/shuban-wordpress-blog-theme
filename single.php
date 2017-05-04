@@ -9,8 +9,26 @@
 
 get_header(); ?>
 
-	<div class="st-primary-wrapper col-md-8">
-		<div id="primary" class="content-area">
+<?php  get_sidebar( 'left' ); ?>
+<!-- /.st-sidebar-wrapper col-md-3 -->
+
+<!-- Layout check -->
+
+ <?php
+if ( is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) { ?>
+    <div class="st-primary-wrapper col-md-6">
+  <?php  } 
+elseif (  is_active_sidebar( 'sidebar' ) && !is_active_sidebar( 'sidebar-left' ) ) {   ?>
+<div class="st-primary-wrapper col-md-8">
+<?php
+} elseif (  !is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) {   ?>
+ <div class="st-primary-wrapper col-md-8">
+<?php  }  else {  ?>
+<div class="st-primary-wrapper col-md-12">
+<?php  }  ?>
+
+<!-- Layout check -->
+	<div id="primary" class="content-area">
 			<main id="main" class="site-main" role="main">
 
 			<?php
@@ -34,5 +52,5 @@ get_header(); ?>
 	<!-- /.st-primary-wrapper col-md-8 -->
 
 <?php
-get_sidebar();
+get_sidebar(); 
 get_footer();
