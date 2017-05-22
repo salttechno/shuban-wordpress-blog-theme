@@ -6,6 +6,8 @@
  * Learn more: https://git.io/vWdr2
  */
 (function() {
+	"use strict";
+	
 	var isIe = /(trident|msie)/i.test( navigator.userAgent );
 
 	if ( isIe && document.getElementById && window.addEventListener ) {

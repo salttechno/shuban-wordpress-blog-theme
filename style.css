@@ -10999,6 +10999,23 @@ table {
   width: 100%;
 }
 
+.st-footer-area {
+  padding: 60px 0 0;
+  background: #393939;
+  color: #fff;
+  font-size: 90%;
+}
+
+.st-footer-area .site-info {
+  background: #202020;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.st-footer-area .widget {
+  color: #393939;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -11144,6 +11161,21 @@ a:hover, a:active {
   outline: 0;
 }
 
+.nav-links a {
+  background: #fff;
+  padding: 6px 20px;
+  display: inline-block;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+  transition: color 0.4s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -11249,6 +11281,18 @@ a:hover, a:active {
   display: block;
 }
 
+@media screen and (max-width: 37.5em) {
+  .main-navigation li {
+    float: none;
+  }
+  .menu-toggle {
+    width: 100%;
+    text-align: center;
+    background: transparent;
+    color: #fff;
+  }
+}
+
 @media screen and (min-width: 37.5em) {
   .menu-toggle {
     display: none;
@@ -11256,6 +11300,12 @@ a:hover, a:active {
   .main-navigation ul {
     display: block;
   }
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+  padding-bottom: 20px;
 }
 
 .site-main .comment-navigation, .site-main
@@ -11436,22 +11486,22 @@ a:hover, a:active {
   box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba(30, 136, 229, 0.4);
 }
 
-.widget.widget_recent_entries ul, .widget.widget_recent_comments ul, .widget.widget_archive ul, .widget.widget_categories ul, .widget.widget_meta ul {
+.widget ul {
   list-style: none;
   margin-left: 0;
   padding-left: 0;
 }
 
-.widget.widget_recent_entries ul li, .widget.widget_recent_comments ul li, .widget.widget_archive ul li, .widget.widget_categories ul li, .widget.widget_meta ul li {
+.widget ul li {
   padding: 10px 0;
   border-bottom: 1px dashed #929292;
 }
 
-.widget.widget_recent_entries ul li a, .widget.widget_recent_comments ul li a, .widget.widget_archive ul li a, .widget.widget_categories ul li a, .widget.widget_meta ul li a {
+.widget ul li a {
   transition: color 0.4s ease;
 }
 
-.widget.widget_recent_entries ul li a:hover, .widget.widget_recent_comments ul li a:hover, .widget.widget_archive ul li a:hover, .widget.widget_categories ul li a:hover, .widget.widget_meta ul li a:hover {
+.widget ul li a:hover {
   text-decoration: none;
 }
 

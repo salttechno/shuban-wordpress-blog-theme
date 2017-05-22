@@ -112,7 +112,19 @@
 .main-navigation.toggled ul {
 	display: block;
 }
-
+@media screen and (max-width: 37.5em) {
+	.main-navigation {
+		li {
+			float: none;
+		}
+	}
+	.menu-toggle {
+		width: 100%;
+		text-align: center;
+		background: transparent;
+		color: $color__white;
+	}
+}
 @media screen and (min-width: 37.5em) {
 	.menu-toggle {
 		display: none;
@@ -125,7 +137,7 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
+	padding-bottom: 20px;
 	.site-main & {
 		margin: 0 0 1.5em;
 		overflow: hidden;

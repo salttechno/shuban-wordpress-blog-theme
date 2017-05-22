@@ -28,23 +28,24 @@ function shuban_create_options() {
 
 	$section->createOption( array(
 		'name' => 'Logo',
-		'id' => 'shuban-mainlogo',
+		'id' => 'shuban-main-logo',
 		'type' => 'upload',
 		'desc' => 'Upload your Logo Image'
 
 	) );
-    
+
     $section->createOption( array(
-		'name' => 'Logo Height',
-		'id' => 'shuban-logo-height',
+		'name' => 'Logo Width',
+		'id' => 'shuban-logo-width',
 		'type' => 'text',
-		'desc' => 'Gives the Height of Logo with px value'
+		'placeholder' => '120',
+		'desc' => 'Gives width to the logo image selected above. (in px)'
 
 	) );
 
 	$section->createOption( array(
 		'name' => 'Site Footer',
-		'id' => 'shuban-sitefooter',
+		'id' => 'shuban-site-footer',
 		'type' => 'textarea',
         'desc' => 'Enter Site Footer'
 

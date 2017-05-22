@@ -30,19 +30,17 @@
 	    text-align: center;
 	    box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3), 0 8px 18px -8px rgba($color__secondary, 0.4);
 	}
-	&.widget_recent_entries, &.widget_recent_comments, &.widget_archive, &.widget_categories, &.widget_meta {
-		ul {
-			list-style: none;
-			margin-left: 0;
-			padding-left: 0;
-			li {
-				padding: 10px 0;
-				border-bottom: 1px dashed $color__light-black;
-				a {
-					transition: color 0.4s ease;
-					&:hover {
-						text-decoration: none;
-					}
+	ul {
+		list-style: none;
+		margin-left: 0;
+		padding-left: 0;
+		li {
+			padding: 10px 0;
+			border-bottom: 1px dashed $color__light-black;
+			a {
+				transition: color 0.4s ease;
+				&:hover {
+					text-decoration: none;
 				}
 			}
 		}

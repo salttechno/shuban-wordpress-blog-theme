@@ -7,24 +7,27 @@
  * @package Shuban
  */
 
-get_header(); ?>
+get_header();
 
-<?php  get_sidebar( 'left' ); ?>
+get_sidebar( 'left' ); ?>
 <!-- left side -->
 
 <!-- Layout check -->
 <?php
 if ( is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) { ?>
     <div class="st-primary-wrapper col-md-6">
-<?php  } 
+<?php
+}
 elseif (  is_active_sidebar( 'sidebar' ) && !is_active_sidebar( 'sidebar-left' ) ) {   ?>
-<div class="st-primary-wrapper col-md-8">
+    <div class="st-primary-wrapper col-md-8">
 <?php
 } elseif (  !is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) {   ?>
-<div class="st-primary-wrapper col-md-8">
-<?php  }  else {  ?>
-<div class="st-primary-wrapper col-md-12">
-<?php  }  ?>
+    <div class="st-primary-wrapper col-md-8">
+<?php
+}  else {  ?>
+    <div class="st-primary-wrapper col-md-12">
+<?php
+}  ?>
 <!-- Layout check -->
 
 	<div id="primary" class="content-area">

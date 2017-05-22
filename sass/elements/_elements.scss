@@ -52,3 +52,22 @@ figure {
 }
 
 @import "tables";
+
+.st-footer-area {
+	padding: 60px 0 0;
+	background: $color__body-text;
+	color: $color__white;
+	font-size: 90%;
+
+	.shuban-footer {
+
+	}
+	.site-info {
+		background: darken($color__body-text, 10%);
+		padding: 12px 0;
+		text-align: center;
+	}
+	.widget {
+		color: $color__body-text;
+	}
+}

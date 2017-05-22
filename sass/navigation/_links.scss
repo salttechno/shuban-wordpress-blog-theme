@@ -17,3 +17,19 @@ a {
 		outline: 0;
 	}
 }
+
+.nav-links {
+	a {
+		background: $color__white;
+		padding: 6px 20px;
+		display: inline-block;
+		border-radius: 6px;
+		-webkit-box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+	       -moz-box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+	            box-shadow: 0 10px 20px -6px rgba(0, 0, 0, 0.3);
+		transition: color 0.4s ease;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
