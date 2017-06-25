@@ -26,20 +26,26 @@
 	<div class="st-footer-area">
 
 		<div class="container">
-			<footer id="colophon" class="site-footer" role="contentinfo">
+			<footer id="colophon" class="site-footer row" role="contentinfo">
 
 				<aside class="shuban-footer" role="complementary">
-				    <div class="col-md-4 widget-area">
-				        <?php dynamic_sidebar( 'first-footer' ); ?>
-				    </div><!-- .first .widget-area -->
+					<?php if ( is_active_sidebar( 'first-footer' ) ) : ?>
+					    <div class="col-md-4 widget-area">
+					        <?php dynamic_sidebar( 'first-footer' ); ?>
+					    </div><!-- .first .widget-area -->
+					<?php endif; ?>
 
-				    <div class="col-md-4 widget-area">
-				        <?php dynamic_sidebar( 'second-footer' ); ?>
-				    </div><!-- .second .widget-area -->
+					<?php if ( is_active_sidebar( 'second-footer' ) ) : ?>
+					    <div class="col-md-4 widget-area">
+					        <?php dynamic_sidebar( 'second-footer' ); ?>
+					    </div><!-- .second .widget-area -->
+					<?php endif; ?>
 
-				    <div class="col-md-4 widget-area">
-				        <?php dynamic_sidebar( 'third-footer' ); ?>
-				    </div><!-- .third .widget-area -->
+					<?php if ( is_active_sidebar( 'third-footer' ) ) : ?>
+					    <div class="col-md-4 widget-area">
+					        <?php dynamic_sidebar( 'third-footer' ); ?>
+					    </div><!-- .third .widget-area -->
+					<?php endif; ?>
 
 				</aside><!-- #shuban-footer -->
 

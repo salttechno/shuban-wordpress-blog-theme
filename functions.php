@@ -188,6 +188,13 @@ function shuban_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'shuban_scripts' );
 
+
+// Enqueue admin area script
+function shuban_admin_scripts() {
+        wp_enqueue_style( 'shuban-google-fonts-admin', '//fonts.googleapis.com/css?family=Poppins|Rubik' );
+}
+add_action( 'admin_enqueue_scripts', 'shuban_admin_scripts' );
+
 /**
  * Implement the Custom Header feature.
  */
