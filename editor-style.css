@@ -4,8 +4,6 @@ Description: Used to style the TinyMCE editor.
 */
 
 
-@import url("https://fonts.googleapis.com/css?family=Poppins|Rubik");
-
 body {
     font-family: 'Poppins';
     color: #383838;
@@ -13,4 +11,22 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Rubik';
     font-weight: 400;
+}
+h1 {
+    font-size: 36px
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 24px;
+}
+h4 {
+    font-size: 18px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 12px;
 }

@@ -28,4 +28,4 @@ if ( is_active_sidebar( 'sidebar' ) && is_active_sidebar( 'sidebar-left' ) ) {  
 			<?php dynamic_sidebar( 'sidebar' ); ?>
 		</aside><!-- #secondary -->
 	</div>
-	<!-- /.st-sidebar-wrapper col-md-3 -->
+	<!-- /.st-sidebar-wrapper -->

@@ -27,7 +27,7 @@
 	margin: 0 0 1.5em;
 }
 
-.post {
+.st-primary-wrapper .post, .st-primary-wrapper .page {
 	background: $color__white;
 	padding: 0px;
 	border-radius: 6px;
@@ -44,6 +44,7 @@
 
 	.entry-header {
 		padding: 15px;
+		padding-top: 0;
 	}
 	.entry-content {
 		padding: 15px;
@@ -102,21 +103,18 @@
 		}
 	}
 	.cat-links {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		font-size: 11px;
-		padding: 1px 8px;
-		border-radius: 0 0 0 6px;
-		background: $color__light-black;
-		color: $color__white;
+		font-size: .75rem;
 		a {
-			color: $color__white;
 			transition: color 0.4s ease;
+			text-transform: uppercase;
 			&:hover {
 				text-decoration: none;
-				color: $color__black-header;
+				color: $color__primary;
 			}
+		}
+		.cat-sep {
+			padding-left: .25rem;
+			padding-right: .25rem;
 		}
 	}
 	&.sticky {
@@ -141,5 +139,16 @@
 			text-decoration: none;
 			box-shadow: 0 14px 26px -12px rgba($color__primary, 0.42), 0 4px 23px 0 rgba(0,0,0, 0.12), 0 8px 10px -5px rgba($color__primary, 0.2);
 		}
+	}
+}
+.entry-footer {
+	padding: 15px 15px 0;
+	.edit-link {
+		float: right;
+	}
+}
+.st-primary-wrapper .page {
+	.entry-header {
+		padding-top: 15px;
 	}
 }

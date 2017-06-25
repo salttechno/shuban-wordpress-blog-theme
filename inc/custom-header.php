@@ -19,8 +19,8 @@
 function shuban_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'shuban_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 1000,
+		'default-text-color'     => '323232',
+		'width'                  => 1600,
 		'height'                 => 250,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'shuban_header_style',

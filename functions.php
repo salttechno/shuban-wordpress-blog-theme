@@ -26,38 +26,18 @@ define( 'INC', get_template_directory() . '/inc' );
 */
 
 if ( ! function_exists( 'shuban_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
 function shuban_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Shuban, use a find and replace
-	 * to change 'shuban' to the name of your theme in all the template files.
-	 */
+
+	// Language
 	load_theme_textdomain( 'shuban', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+	// Title tag
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+	// Post Thumbnail support
 	add_theme_support( 'post-thumbnails' );
 
 	// Thumbnail sizes
@@ -71,10 +51,7 @@ function shuban_setup() {
 		'menu-1' => esc_html__( 'Primary', 'shuban' ),
 	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
+	// HTML5 Markup
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',
@@ -85,13 +62,15 @@ function shuban_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'shuban_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'f2f2f2',
 		'default-image' => '',
 	) ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Custom Header
+	add_theme_support( 'custom-header' );
 
     //Adding Custom CSS Styles to TinyMCE
     add_editor_style();
@@ -128,7 +107,7 @@ function shuban_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-		register_sidebar( array(
+	register_sidebar( array(
 		'name'          => esc_html__( 'Left Sidebar', 'shuban' ),
 		'id'            => 'sidebar-left',
 		'description'   => esc_html__( 'Add widgets here to make left sidebar visible.', 'shuban' ),
@@ -138,7 +117,7 @@ function shuban_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-		register_sidebar( array(
+	register_sidebar( array(
 		'name'          => esc_html__( 'First Footer Widget Area', 'shuban' ),
 		'id'            => 'first-footer',
 		'description'   => esc_html__( 'Add widgets here to make First sidebar visible.', 'shuban' ),
@@ -148,7 +127,7 @@ function shuban_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-		register_sidebar( array(
+	register_sidebar( array(
 		'name'          => esc_html__( 'Second Footer Widget Area', 'shuban' ),
 		'id'            => 'second-footer',
 		'description'   => esc_html__( 'Add widgets here to make Second sidebar visible.', 'shuban' ),
@@ -158,7 +137,7 @@ function shuban_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-		register_sidebar( array(
+	register_sidebar( array(
 		'name'          => esc_html__( 'Third Footer Widget Area', 'shuban' ),
 		'id'            => 'third-footer',
 		'description'   => esc_html__( 'Add widgets here to make Third sidebar visible.', 'shuban' ),
@@ -168,7 +147,7 @@ function shuban_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-		register_sidebar( array(
+	register_sidebar( array(
 		'name'          => esc_html__( 'Page Sidebar', 'shuban' ),
 		'id'            => 'page-sidebar',
 		'description'   => esc_html__( 'Add widgets here to make Page sidebar visible.', 'shuban' ),
@@ -177,6 +156,16 @@ function shuban_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar(array(
+		'name' => esc_html__('Instagram Footer', 'shuban'),
+		'id' => 'sidebar-footer',
+		'before_widget' => '<div id="%1$s" class="instagram-widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="instagram-title">',
+		'after_title' => '</h4>',
+		'description' => esc_html__('Add the "Instagram" widget here. You need to install "WP Instagram" plugin first. TIP: For best result, set number of photos to 10.', 'shuban'),
+	) );
 }
 add_action( 'widgets_init', 'shuban_widgets_init' );
 
@@ -184,11 +173,14 @@ add_action( 'widgets_init', 'shuban_widgets_init' );
  * Enqueue scripts and styles.
  */
 function shuban_scripts() {
+	wp_enqueue_style( 'shuban-google-fonts', '//fonts.googleapis.com/css?family=Poppins|Rubik' );
+	wp_enqueue_style( 'shuban-swiper', get_template_directory_uri() . '/css/swiper.min.css' );
 	wp_enqueue_style( 'shuban-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'shuban-swiper', get_template_directory_uri() . '/js/swiper.jquery.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'shuban-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'shuban-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'shuban-main', get_template_directory_uri() . '/js/shuban-main.js', array( 'jquery' ), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -200,6 +192,10 @@ add_action( 'wp_enqueue_scripts', 'shuban_scripts' );
  * Implement the Custom Header feature.
  */
  require INC . '/custom-header.php';
+
+ // Customizer
+ require get_template_directory() . '/functions/shuban-customizer-settings.php';
+ require get_template_directory() . '/functions/shuban-customizer-style.php';
 
 /**
  * Custom template tags for this theme.

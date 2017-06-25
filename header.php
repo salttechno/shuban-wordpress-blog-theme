@@ -9,7 +9,8 @@
  * @package Shuban
  */
 
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -28,42 +29,42 @@
 
 			<header id="masthead" class="site-header st-site-header" role="banner">
 				 <div class="site-branding">
-				 	<?php
-                        $titan = TitanFramework::getInstance( 'shuban' );
-                        $main_logo = $titan->getOption( 'shuban-main-logo' );
-                        $shuban_logo_width = $titan->getOption( 'shuban-logo-width' );
-                        $main_logsrc  = wp_get_attachment_image_url( $main_logo );
-                        $description = get_bloginfo( 'description', 'display' );
 
-                        if( $main_logo ) {  ?>
-	                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-	                        <img class="main-logo" src="<?php echo esc_url( $main_logsrc ); ?>" alt="shuban" width="<?php echo $shuban_logo_width; ?>"></a>
-					<?php }
-                    	elseif ( is_front_page() && is_home() ) {
-                	?>
-	                    <h1 class="site-title">
-	                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-	                    </h1>
-                    <?php
-                    		$description = get_bloginfo( 'description', 'display' );
-						} else {
-                    ?>
-                    	<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                    <?php
+					 <?php if ( !get_theme_mod( 'shuban_logo' ) ) : ?>
 
-						}
-					 	if ( $description || is_customize_preview() ) {
-                    ?>
-                    		<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                    <?php } ?>
+						<?php if(is_front_page()) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<?php else : ?>
+							<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
+						<?php endif; ?>
+
+					<?php else : ?>
+
+						<?php if(is_front_page()) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod('shuban_logo')); ?>" alt="<?php bloginfo( 'name' ); ?>" class="shuban-logo-img" height="<?php if ( get_theme_mod( 'shuban_logo_height' ) ) : echo get_theme_mod( 'shuban_logo_height' ); endif; ?>" /></a></h1>
+						<?php else : ?>
+							<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod('shuban_logo')); ?>" alt="<?php bloginfo( 'name' ); ?>" class="shuban-logo-img" height="<?php if ( get_theme_mod( 'shuban_logo_height' ) ) : echo get_theme_mod( 'shuban_logo_height' ); endif; ?>" /></a></h2>
+						<?php endif; ?>
+
+					<?php endif; ?>
+
+					<?php $description = get_bloginfo( 'description', 'display' ); ?>
+					<?php if ( $description || is_customize_preview() ) : ?>
+						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+					<?php endif; ?>
 
                 </div><!-- .site-branding -->
-	            <nav id="site-navigation" class="main-navigation" role="navigation">
-	            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php //esc_html_e( 'Primary Menu', 'shuban' ); ?>
-	                 <span class="fa fa-bars"></span>
-	            </button>
-	            <?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-	            </nav><!-- #site-navigation -->
+
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<button class="menu-toggle btn btn-primary btn-sm" aria-controls="primary-menu" aria-expanded="false" ><i class="fa fa-bars"></i></button>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'menu-1',
+							'menu_id' => 'primary-menu',
+							'menu_class' => 'shuban-main-menu'
+						) );
+					?>
+				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 		</div>
 		<!-- /.container -->

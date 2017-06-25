@@ -32,6 +32,13 @@ get_sidebar( 'left' ); ?>
 	<?php  }  ?>
 	<!-- Layout check -->
 	        <div id="primary" class="content-area">
+
+				<?php if ( is_home() ) : ?>
+					<?php if( ! get_theme_mod( 'shuban_hide_featured_posts' ) ) : ?>
+						<?php get_template_part( 'inc/featured-posts' ); ?>
+					<?php endif; ?>
+				<?php endif; ?>
+
 				<main id="main" class="site-main" role="main">
 
 				<?php

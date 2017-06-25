@@ -11,13 +11,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
 	<?php if ( has_post_thumbnail() ) { ?>
 		<div class="st-post-thumb">
 			<?php the_post_thumbnail(); ?>
 		</div>
 		<!-- /.st-post-thumb -->
 	<?php } ?>
+
+	<footer class="entry-footer">
+		<?php shuban_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
 
 	<header class="entry-header">
 		<?php
@@ -63,8 +66,4 @@
 		</div><!--/.entry-->
 	<?php endif; ?>
 
-
-	<footer class="entry-footer">
-		<?php shuban_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

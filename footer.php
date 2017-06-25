@@ -17,8 +17,14 @@
 	</div>
 	<!-- /.st-content-area -->
 
+	<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
+	<div id="footer-instagram">
+		<?php dynamic_sidebar( 'sidebar-footer' ) ?>
+	</div>
+	<?php endif; ?>
 
 	<div class="st-footer-area">
+
 		<div class="container">
 			<footer id="colophon" class="site-footer" role="contentinfo">
 
@@ -42,15 +48,27 @@
 		<!-- /.container -->
 
 		<div class="site-info">
-			<?php
-				$titan = TitanFramework::getInstance( 'shuban' );
-				$shuban_sitefooter = $titan->getOption( 'shuban-site-footer' );
 
-				echo $shuban_sitefooter;
-			?>
+			<div class="container">
+				<footer id="colophon" class="site-footer row" role="contentinfo">
+					<div class="col-md-6 text-left">
+						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('shuban_footer_text_left', '&copy; Copyright 2017 - All Rights Reserved')); ?></h6>
+					</div>
+
+					<div class="col-md-6 text-right">
+						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('shuban_footer_text_right', 'Theme Built By <a href="http://www.salttechno.com">SaltTechno</a>')); ?></h6>
+					</div>
+				</footer><!-- #colophon -->
+			</div>
+			<!-- /.container -->
 		</div><!-- .site-info -->
 	</div>
 	<!-- /.st-footer-area -->
+
+	<div class="scroll-to-top">
+		<i class="fa fa-arrow-up"></i>
+	</div>
+	<!-- /.scroll-to-top -->
 
 
 </div><!-- #page -->

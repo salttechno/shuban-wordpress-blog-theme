@@ -17,18 +17,13 @@ get_header(); ?>
 			if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'shuban' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'shuban' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 				</header><!-- .page-header -->
 
 				<?php
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
-					/**
-					 * Run the loop for the search to output the results.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-search.php and that will be used instead.
-					 */
 					get_template_part( 'template-parts/content', 'search' );
 
 				endwhile;
@@ -43,8 +38,7 @@ get_header(); ?>
 
 			</main><!-- #main -->
 		</section><!-- #primary -->
-	</div>
-	<!-- /.st-primary-wrapper col-md-8 -->
+	</div><!-- /.st-primary-wrapper col-md-8 -->
 
 <?php
 get_sidebar();
