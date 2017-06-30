@@ -174,10 +174,10 @@ add_action( 'widgets_init', 'shuban_widgets_init' );
  */
 function shuban_scripts() {
 	wp_enqueue_style( 'shuban-google-fonts', '//fonts.googleapis.com/css?family=Poppins|Rubik' );
-	wp_enqueue_style( 'shuban-swiper', get_template_directory_uri() . '/css/swiper.min.css' );
+	wp_enqueue_style( 'shuban-swiper', get_template_directory_uri() . '/css/swiper.css' );
 	wp_enqueue_style( 'shuban-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'shuban-swiper', get_template_directory_uri() . '/js/swiper.jquery.min.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'shuban-swiper', get_template_directory_uri() . '/js/swiper.jquery.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'shuban-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'shuban-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'shuban-main', get_template_directory_uri() . '/js/shuban-main.js', array( 'jquery' ), '', true );
