@@ -1,13 +1,13 @@
 @charset "UTF-8";
 /*!
 Theme Name: Shuban
-Theme URI: http://shuban.themesease.com
+Theme URI: https://themes.salttechno.com/downloads/shuban/
 Author: SaltTechno
-Author URI: http://www.salttechno.com
-Description: Clean and professional WordPress blog theme for a business & personal blog. This is two-column theme with right-sidebar on posts & pages.
-Version: 1.0.2
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author URI: https://themes.salttechno.com
+Description: Clean and professional WordPress blog theme for a business & personal blog. This is two-column theme with right-sidebar on posts & pages. The theme is designed with the classic elegance to keep your reader/website visitor more focused on the content & images. Our professional designers have kept the design simple yet eye-pleasing.
+Version: 1.1.0
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: shuban
 Tags: blog, two-columns, right-sidebar, four-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, sticky-post, custom-logo, footer-widgets, full-width-template, rtl-language-support, theme-options, threaded-comments, featured-images
 
@@ -10946,7 +10946,7 @@ html {
 body {
   background: #f2f2f2;
   /* Fallback for when there is no custom background color defined. */
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   line-height: 1.75em;
   letter-spacing: 0.5px;
@@ -10956,7 +10956,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rubik';
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   color: #323232;
 }
@@ -12432,6 +12432,35 @@ q:after {
 
 .main-navigation .sub-menu {
   text-align: left;
+}
+
+.shuban-help-bar {
+  background: #1e88e5 !important;
+  margin-right: 10px !important;
+}
+
+.shuban-help-bar a {
+  padding-right: 10px !important;
+  padding-left: 10px !important;
+}
+
+.shuban-help-bar a:before {
+  content: "\f468";
+  top: 2px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.shuban-contact-form .col-md-6, .shuban-contact-form .col-md-12 {
+  margin-top: 10px;
+}
+
+.shuban-contact-form .read-post {
+  padding: 6px 20px;
+  border: 0;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=style.css.map */

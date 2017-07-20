@@ -10,7 +10,7 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-	font-family: 'Poppins';
+	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
 	line-height: 1.75em;
 	letter-spacing: 0.5px;
@@ -19,7 +19,7 @@ body {
 	color: #383838;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Rubik';
+	font-family: 'Rubik', sans-serif;
 	font-weight: 400;
 	color: #323232;
 }

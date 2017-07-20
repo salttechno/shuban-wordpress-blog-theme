@@ -24,15 +24,9 @@ function shuban_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'shuban' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-		esc_html_x( '%s', 'post author', 'shuban' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
 	echo '<span class="posted-on meta-span"><i class="fa fa-calendar-check-o"></i>' . $posted_on . '</span><span class="byline meta-span"><i class="fa fa-user-o"></i>' . $byline . '</span>'; // WPCS: XSS OK.
 
@@ -45,7 +39,12 @@ function shuban_posted_on() {
 
 	$tags_list = get_the_tag_list( '', esc_html__( ', ', 'shuban' ) );
 	if ( $tags_list ) {
-		printf( '<span class="tags-links meta-span"><i class="fa fa-tags"></i>' . esc_html__( '%1$s', 'shuban' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		echo '<span class="tags-links meta-span"><i class="fa fa-tags"></i>';
+		echo wp_kses( $tags_list, array('a' => array(
+	        'href' => array(),
+	        'title' => array()
+	    ),) );
+		echo '</span>';
 	}
 
 }
@@ -60,15 +59,17 @@ function shuban_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 		$categories_list = get_the_category_list( __( ' <span class="cat-sep">&#166;</span> ', 'shuban' ) );
 		if ( $categories_list && shuban_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( '%1$s', 'shuban' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			echo '<span class="cat-links">';
+			echo wp_kses( $categories_list, array('a' => array(
+		        'href' => array(),
+		        'title' => array()
+		    ),) );
+			echo '</span>';
 		}
 	}
 
 	edit_post_link(
-		sprintf(
-			esc_html__( 'Edit %s', 'shuban' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
+		esc_html__( 'Edit', 'shuban' ),
 		'<span class="edit-link">',
 		'</span>'
 	);

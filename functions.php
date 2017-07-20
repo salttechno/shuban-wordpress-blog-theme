@@ -13,11 +13,11 @@
 * 1.0 - Define constants
 * ------------------------------------------------------------------------------------
 */
-define( 'THEMEROOT', get_stylesheet_directory_uri() );
-define( 'IMAGES', THEMEROOT . '/images' );
-define( 'SCRIPTS', THEMEROOT . '/js' );
-define( 'FRAMEWORK', get_template_directory() . '/framework' );
-define( 'INC', get_template_directory() . '/inc' );
+define( 'SHUBAN_THEMEROOT', get_stylesheet_directory_uri() );
+define( 'SHUBAN_IMAGES', SHUBAN_THEMEROOT . '/images' );
+define( 'SHUBAN_SCRIPTS', SHUBAN_THEMEROOT . '/js' );
+define( 'SHUBAN_FRAMEWORK', get_template_directory() . '/framework' );
+define( 'SHUBAN_INC', get_template_directory() . '/inc' );
 
 /**
 * ------------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ function shuban_setup() {
 	add_theme_support( 'custom-header' );
 
     //Adding Custom CSS Styles to TinyMCE
-    add_editor_style();
+    add_editor_style( 'editor-style.css' );
 
 }
 endif;
@@ -174,12 +174,12 @@ add_action( 'widgets_init', 'shuban_widgets_init' );
  */
 function shuban_scripts() {
 	wp_enqueue_style( 'shuban-google-fonts', '//fonts.googleapis.com/css?family=Poppins|Rubik' );
-	wp_enqueue_style( 'shuban-swiper', get_template_directory_uri() . '/css/swiper.css' );
+	wp_enqueue_style( 'swiper', get_template_directory_uri() . '/css/swiper.css' );
 	wp_enqueue_style( 'shuban-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'shuban-swiper', get_template_directory_uri() . '/js/swiper.jquery.js', array( 'jquery' ), '', true );
+	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/js/swiper.jquery.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'shuban-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'shuban-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'shuban-main', get_template_directory_uri() . '/js/shuban-main.js', array( 'jquery' ), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -191,14 +191,14 @@ add_action( 'wp_enqueue_scripts', 'shuban_scripts' );
 
 // Enqueue admin area script
 function shuban_admin_scripts() {
-        wp_enqueue_style( 'shuban-google-fonts-admin', '//fonts.googleapis.com/css?family=Poppins|Rubik' );
+	wp_enqueue_style( 'shuban-google-fonts-admin', '//fonts.googleapis.com/css?family=Poppins|Rubik' );
 }
 add_action( 'admin_enqueue_scripts', 'shuban_admin_scripts' );
 
 /**
  * Implement the Custom Header feature.
  */
- require INC . '/custom-header.php';
+ require SHUBAN_INC . '/custom-header.php';
 
  // Customizer
  require get_template_directory() . '/functions/shuban-customizer-settings.php';
@@ -207,22 +207,22 @@ add_action( 'admin_enqueue_scripts', 'shuban_admin_scripts' );
 /**
  * Custom template tags for this theme.
  */
-require INC . '/template-tags.php';
+require SHUBAN_INC . '/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require INC . '/extras.php';
+require SHUBAN_INC . '/extras.php';
 
 /**
  * Customizer additions.
  */
-require INC . '/customizer.php';
+require SHUBAN_INC . '/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require INC . '/jetpack.php';
+require SHUBAN_INC . '/jetpack.php';
 
 
-require FRAMEWORK . '/init.php';
+require SHUBAN_FRAMEWORK . '/init.php';

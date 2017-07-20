@@ -405,3 +405,29 @@ q:after {
         text-align: left;
     }
 }
+.shuban-help-bar {
+    background: $color__secondary !important;
+    margin-right: 10px !important;
+    a {
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        &:before {
+            content: "\f468";
+            top: 2px;
+        }
+    }
+
+}
+.w-100 {
+    width: 100%;
+}
+.shuban-contact-form {
+    .col-md-6, .col-md-12 {
+        margin-top: 10px;
+    }
+    .read-post {
+        padding: 6px 20px;
+        border: 0;
+        line-height: 1.5;
+    }
+}

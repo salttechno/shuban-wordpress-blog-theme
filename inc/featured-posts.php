@@ -39,7 +39,7 @@
                         $feat_image = get_template_directory_uri() . '/images/default-img.png';
                     }
                 ?>
-                <div class="swiper-slide shuban-slide" href="<?php echo get_permalink(); ?>" style="background-image:url(<?php echo $feat_image; ?>)">
+                <div class="swiper-slide shuban-slide" style="background-image:url(<?php echo esc_url($feat_image); ?>)">
                     <div class="slide-content">
                         <div class="text-center ver-center">
                             <h6 class="featured-title"><?php echo esc_html_e( 'Featured Post', 'shuban' ); ?></h6>
@@ -48,7 +48,7 @@
                                 <span class="mr-10"><span class="fa fa-calendar mr-5"></span><?php the_time( get_option('date_format') ); ?></span>
                                 <span class=""><span class="fa fa-user mr-5"></span><?php the_author(); ?></span>
                             </h6>
-                            <a href="<?php echo get_permalink(); ?>" class="btn btn-primary btn-sm">Read More</a>
+                            <a href="<?php echo esc_url(get_permalink()); ?>" class="btn btn-primary btn-sm"><?php esc_html_e( 'Read More', 'shuban' ); ?></a>
                         </div>
                     </div>
                 </div>
