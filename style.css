@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /*!
 Theme Name: Shuban
-Theme URI: https://themes.salttechno.com/downloads/shuban/
+Theme URI: https://themes.salttechno.com/wordpress-theme/shuban-free-blog-theme/
 Author: SaltTechno
 Author URI: https://themes.salttechno.com
 Description: Clean and professional WordPress blog theme for a business & personal blog. This is two-column theme with right-sidebar on posts & pages. The theme is designed with the classic elegance to keep your reader/website visitor more focused on the content & images. Our professional designers have kept the design simple yet eye-pleasing.
-Version: 1.1.0
+Version: 1.1.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: shuban
@@ -12461,6 +12461,27 @@ q:after {
   padding: 6px 20px;
   border: 0;
   line-height: 1.5;
+}
+
+/*--------------------------------------------------------------
+# Custom Responsive Css
+--------------------------------------------------------------*/
+@media (max-width: 678px) {
+  .copyright, .builtby {
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .st-primary-wrapper .post .st-post-thumb, .st-primary-wrapper .page .st-post-thumb {
+    height: 160px;
+  }
+}
+
+@media (max-width: 400px) {
+  .st-primary-wrapper .post .st-post-thumb, .st-primary-wrapper .page .st-post-thumb {
+    height: 140px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

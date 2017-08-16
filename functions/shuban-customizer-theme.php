@@ -80,3 +80,28 @@ $wp_customize->add_control(
 		)
 	)
 );
+
+
+
+
+/**
+* Full  POST Content
+*/
+
+$wp_customize->add_setting(
+	'shuban_full_post_content',
+	array(
+        'default' => false,
+		'sanitize_callback' => 'shuban_sanitize_checkbox'
+	)
+);
+// Add control
+$wp_customize->add_control(
+    'shuban_full_post_content',
+    array(
+        'type' => 'checkbox',
+        'label' => esc_html__( 'Show full post content', 'shuban' ),
+        'section' => 'shuban_theme_options',
+        'description' => 'Check this to show full post content.'
+    )
+);

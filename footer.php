@@ -57,11 +57,11 @@
 
 			<div class="container">
 				<footer id="colophon" class="site-footer row" role="contentinfo">
-					<div class="col-md-6 text-left">
+					<div class="col-md-6 copyright text-left">
 						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('shuban_footer_text_left', '&copy; Copyright 2017 - All Rights Reserved')); ?></h6>
 					</div>
 
-					<div class="col-md-6 text-right">
+					<div class="col-md-6 builtby text-right">
 						<h6 class="mb-0"><?php echo wp_kses_post(get_theme_mod('shuban_footer_text_right', 'Theme Built By <a href="http://www.salttechno.com">SaltTechno</a>')); ?></h6>
 					</div>
 				</footer><!-- #colophon -->

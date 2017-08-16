@@ -58,11 +58,17 @@
 		else :
 	?>
 		<div class="entry excerpt entry-summary">
-			<?php the_excerpt(); ?>
-			<div class="text-center">
-				<a href="<?php the_permalink(); ?>" class="read-post">Read Post</a>
-			</div>
-			<!-- /.text-center -->
+			<?php if ( get_theme_mod( 'shuban_full_post_content' ) ) : ?>
+				<?php the_content(); ?>
+           	   <!-- full content -->
+           	<?php else : ?>
+	           	 <?php the_excerpt(); ?>
+	           	<!-- Only excerpt -->
+				<div class="text-center">
+					<a href="<?php the_permalink(); ?>" class="read-post">Read Post</a>
+				</div>
+			 <!-- /.text-center -->
+            <?php endif; ?>
 		</div><!--/.entry-->
 	<?php endif; ?>
 
