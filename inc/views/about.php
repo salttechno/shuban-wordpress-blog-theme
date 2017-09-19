@@ -116,6 +116,103 @@
     <!-- /.welcome-panel -->
 
 
+    <div class="welcome-panel table-panel">
+        <div class="welcome-panel-content panel-text-center">
+            <div class="table-title">
+                    <h2>WHY UPGRADE TO PRO?  </h2>
+                    <p class="about-description"> Upgrade to Shuban Pro for these awesome features! </p>
+            </div>
+            <div class="welcome-panel-column-container-table">
+                <div class="welcome-panel-column-table">
+
+
+                     <div class="feature-table">
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th><b>Shuban Free</b></th>
+                              <th><b>Shuban Pro</b></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Multiple Post Formats</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+
+                            </tr>
+                            <tr>
+                              <td>Multiple Navigation Bars</td>
+
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr>
+                              <td>Full Width Featured Posts Slider</td>
+
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+
+                            </tr>
+                            <tr>
+                              <td>Custom Widgets</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+
+                            </tr>
+                            <tr>
+                              <td>Edit Footer Right Text</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr>
+                              <td>Add Social Links</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr>
+                            <!-- <tr>
+                              <td>Color Customization</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr> -->
+                            <tr>
+                              <td>Popular Posts Widgets</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr>
+                              <td>Premium & Quick Support</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr>
+                            <tr>
+                              <td>Subscribe Form Style</td>
+                              <td>❌</td>
+                              <td><b class="check">✔</b></td>
+                            </tr>
+
+                          </tbody>
+                        </table>
+
+                        <a class="button button-primary button-hero load-customize hide-if-no-customize" href="https://themes.salttechno.com/wordpress-theme/shuban-pro-premium-blog-theme/" target="_blank"><?php esc_html_e( 'Learn More', 'shuban' ) ?></a>
+                        <a class="button button-primary button-hero load-customize hide-if-no-customize" href="http://shubanpro.themesease.com/" target="_blank"><?php esc_html_e( 'View Demo', 'shuban' ) ?></a>
+
+                     </div>
+                </div>
+                <!-- /.welcome-panel-column -->
+
+
+
+
+            </div>
+            <!-- /.welcome-panel-column-container -->
+        </div>
+        <!-- /.welcome-panel-content -->
+    </div>  <!-- /.welcome-panel table -->
+
+
 
     <div class="shuban-text-center">
         <a href="https://themes.salttechno.com" target="_blank" class="shuban-d-iblock"><img src="<?php echo get_template_directory_uri() ?>/images/brought-by-salt.png" alt="" width="200"></a>

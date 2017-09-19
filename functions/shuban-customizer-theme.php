@@ -83,11 +83,39 @@ $wp_customize->add_control(
 
 
 
+/**
+* Disable Right footer Text field
+*/
+$wp_customize->add_setting(
+    'shuban_footer_text_right',
+    array(
+        'default'     => esc_html__( 'WordPress Blog Themes by Salt Techno', 'shuban' ),
+        'sanitize_callback'     => 'wp_kses_post'
+    )
+);
+$wp_customize->add_control(
+    new WP_Customize_Control(
+        $wp_customize,
+        'shuban_footer_text_right',
+        array(
+            'label'      => esc_html__( 'Footer Text Right', 'shuban' ),
+            'section'    => 'shuban_theme_options',
+            'settings'   => 'shuban_footer_text_right',
+            'type'       => 'text',
+            'description' => 'You can edit this text only in a <b>Pro Version</b>.',
+            'input_attrs' => array(
+            'class' => 'readonly disabled',
+            ),
+        )
+    )
+);
+
+
+
 
 /**
 * Full  POST Content
 */
-
 $wp_customize->add_setting(
 	'shuban_full_post_content',
 	array(

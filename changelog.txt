@@ -1,5 +1,10 @@
 ## Changelog
 
+
+= 1.1.2. Sep 19th 2017 =
+* fixed: Comments from  responsiveness issue -  style.css
+* added: Help message added in footer widget - footer.php
+
 = 1.1.1. Aug 16th 2017 =
 * fixed:  Site footer responsiveness issue on mobile - footer.php & style.css
 * added: Full post content show option in customizing setting - content.php and shuban-customizer-theme.php

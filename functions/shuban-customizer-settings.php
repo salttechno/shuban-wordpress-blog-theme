@@ -4,6 +4,7 @@ function shuban_register_theme_customizer( $wp_customize ) {
 	// Include settings
     include( get_template_directory() . '/functions/shuban-customizer-theme.php');
     include( get_template_directory() . '/functions/shuban-customizer-featured.php');
+    include( get_template_directory() . '/functions/shuban-customizer-update-pro.php');
 
 }
 add_action( 'customize_register', 'shuban_register_theme_customizer' );
